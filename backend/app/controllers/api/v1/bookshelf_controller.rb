@@ -5,6 +5,11 @@ class Api::V1::BookshelfController < ApplicationController
     render json: @books
   end
 
+  def create
+    @book = Book.create(book_params)
+    render json: @book
+  end
+
   def update
     @book = Book.find(params[:id])
 
@@ -18,7 +23,7 @@ class Api::V1::BookshelfController < ApplicationController
 
   private
   def book_params
-    params.permit(:title, :author)
+    params.permit(:title, :author_id, author_attributes: [:name])
   end
 
 end
