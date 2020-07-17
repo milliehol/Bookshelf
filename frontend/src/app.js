@@ -6,14 +6,13 @@ class App {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.createBooks = this.createBooks.bind(this);
     this.createAuthors = this.createAuthors.bind(this);
-    this.addBooks = this.addBooks.bind(this);
+    //this.addBooks = this.addBooks.bind(this);
 
   }
 
   attachEventListeners() {
     $('#books-list').on('click', 'button', this.handleEditClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
-    this.notesNode.addEventListener('click', this.handleNoteClick.bind(this))
   }
 
   createBooks(books) {
@@ -60,36 +59,5 @@ class App {
     $('#update').html(book.renderUpdateForm());
   }
 
-  handleAddBook() {
-   event.preventDefault()
-   const body = this.noteInput.value
-   this.adapter
-     .createNote(body)
-     .then(noteJSON => this.notes.push(new Note(noteJSON)))
-     .then(this.render.bind(this))
-     .then(() => (this.noteInput.value = ''))
- }
 
- handleNoteClick() {
-
-         event.target.dataset.action === 'delete-note' &&
-         event.target.parentElement.classList.contains('note-element')
-       {
-         const noteId = event.target.parentElement.dataset.noteid
-         this.adapter.deleteNote(noteId).then(resp => this.removeDeletedNote(resp))
-       }
-}
-
-removeDeletedNote(deleteResponse) {
-   this.notes = this.notes.filter(note => note.id !== deleteResponse.noteId)
-   this.render()
- }
-
- notesHTML() {
-   return this.notes.map(note => note.render()).join('')
- }
-
- render() {
-   this.notesNode.innerHTML = `<ul>${this.notesHTML()}</ul>`
- }
 }
