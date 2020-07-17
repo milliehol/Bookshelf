@@ -2,31 +2,23 @@
 <html>
   <head>
     <title>Bookshelf</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="src/author.js"></script>
+    <script type="text/javascript" src="src/book.js"></script>
+    <script type="text/javascript" src="src/adapter.js"></script>
+    <script type="text/javascript" src="src/app.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
   </head>
   <body>
     <div class="container">
-      <div id="new-author-container">
-        <form id="new-author-form">
-          <input type="text" name="author-body" id="new-author-body">
-          <input type="submit" value="Save author">
-        </form>
-      </div>
-      <div id="authors-container">
+      <a class="show-link" href='#'>
+            <ul id='books-list'></ul>
+          </a>
 
-      </div>
-
-      <div id="shuffle">
-
-      </div>
-    </div>
-
-    <script type="text/javascript" src="src/author.js"></script>
-    <script type="text/javascript" src="src/authorsAdapter.js"></script>
-    <script type="text/javascript" src="src/authors.js"></script>
-    <script type="text/javascript" src="src/app.js"></script>
-    <script type="text/javascript" src="src/index.js"></script>
+     <div id='update'></div>
 
 
+</div>
   </body>
 </html>
