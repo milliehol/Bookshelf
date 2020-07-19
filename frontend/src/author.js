@@ -5,11 +5,28 @@ class Author {
     Author.all.push(this);
   }
 
-  const authorFormFields = `
-    <label><strong>Name: </strong></label><br/>
-    <input type="text" id="name"><br/>
-    <input type="hidden" data-id='${this.name}'>
-    <br/><br/><br/>`
+
+  renderListItem() {
+
+    if (super.author_id === this.id) {
+    return `<div class="card" data-author-id="${this.id}">
+            <button class="view-events-dog-button" style="background-color:blue">View Record</button>
+            <button class="edit-dog-button" style="background-color:orange">Edit Info</button>
+            <button class="delete-dog-button" style="background-color:red">Delete Dog</button>
+            </br></br>
+            <strong class="author-name">${this.name}</strong> <br/>
+            <strong class="author-name">${super.title}</strong> <br/>
+        </div>`;
+  }
+  return `<div class="card" data-author-id="${this.id}">
+          <button class="view-events-dog-button" style="background-color:blue">View Record</button>
+          <button class="edit-dog-button" style="background-color:orange">Edit Info</button>
+          <button class="delete-dog-button" style="background-color:red">Delete Dog</button>
+          </br></br>
+          <strong class="author-name">${this.name}</strong> <br/>
+      </div>`;
+  }
+
 
 
   update({ name }) {
@@ -20,6 +37,7 @@ class Author {
   static findById(id) {
     return this.all.find(author => author.id === id);
   }
+
 }
 
 Author.all = [];

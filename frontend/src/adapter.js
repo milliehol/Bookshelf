@@ -15,17 +15,29 @@ class Adapter {
     return this.get(`${this.baseUrl}/authors`);
   }
 
-  addBook(id, body) {
-    return this.post(`${this.baseUrl}/books/${id}`, body);
+  updateBook(id, body) {
+    return this.patch(`${this.baseUrl}/books/${id}`, body);
+  }
+
+  deleteBook(id, body) {
+    return this.delete(`${this.baseUrl}/books/${id}`, body);
   }
 
   get(url) {
     return fetch(url).then(res => res.json());
   }
 
-  post(url, body) {
+  patch(url, body) {
     return fetch(url, {
-      method: 'POST',
+      method: 'PATCH',
+      headers: this.headers,
+      body: JSON.stringify(body)
+    }).then(res => res.json());
+  }
+
+  delete(url, body) {
+    return fetch(url, {
+      method: 'DELETE',
       headers: this.headers,
       body: JSON.stringify(body)
     }).then(res => res.json());

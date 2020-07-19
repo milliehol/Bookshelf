@@ -16,7 +16,8 @@ class Book {
     return `
     <li>
       <h3>${this.title} - ${this.author}
-        <button data-action=delete-note>delete</button>
+      <button data-id=${this.id}>update</button>
+        <button data-id=${this.id}>delete</button>
       </h3>
     </li>`;
   }
@@ -29,7 +30,7 @@ class Book {
         <input type="text" value="${this.title}" />
       </p>
 
-      <button data-action='delete-book'>Save Book</button>
+      <button type='submit'>Save Book</button>
     </form>
   `;
   }
