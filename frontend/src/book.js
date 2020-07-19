@@ -16,8 +16,8 @@ class Book {
     return `
     <li>
       <h3>${this.title} - ${this.author}
-      <button data-id=${this.id}>update</button>
-        <button data-id=${this.id}>delete</button>
+      <button data-id=${this.id} class="book-btn">Update Title</button>
+        <button data-id=${this.id} class="book-btn">delete</button>
       </h3>
     </li>`;
   }
@@ -25,7 +25,6 @@ class Book {
   renderUpdateForm() {
     return `
     <form data-id='${this.id}'>
-      <label>Title</label>
       <p>
         <input type="text" value="${this.title}" />
       </p>
@@ -36,7 +35,7 @@ class Book {
   }
 
   static findById(id) {
-    return this.all.find(book => book.id === id);
+    return this.all.find(book => book.id === +id);
   }
 }
 

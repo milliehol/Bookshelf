@@ -3,6 +3,7 @@ body {
    font-weight: 300;
    line-height: 1.6em;
    font-size: 1.3em;
+   background-image: url("bookbackground.jpg");
 }
 
 a {
@@ -14,10 +15,21 @@ input {
 }
 
 .container {
-  width: 960px;
+  width: 730px;
   margin:auto;
-  margin-top:50px;
-  margin-left:50px;
+  margin-top:100px;
+  margin-left:100px;
+  //background-color: #cccccc;
+}
+
+.container2 {
+  width: auto;
+  margin:auto;
+  margin-top:100px;
+  margin-left:100px;
+  padding-top: 50px;
+  padding-left: 50px;
+  text-decoration-color: #fff;
 }
 
 ul {
@@ -27,3 +39,34 @@ ul {
 .delete-book-link {
   color:red;
 }
+
+
+h1,h2,h3,h4,h5,h6 {
+
+	color:white;
+	text-transform: capitalize;
+
+}
+
+button {
+	background: #00d8ff;
+    border: 1px solid #00d8ff;
+    width: 120px;
+    height: 40px;
+    white-space: nowrap;
+    text-align: center;
+    color: #fff;
+    font-size:14px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    border-radius: 5px;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+button:hover{
+    color: #fff;
+    background: #00d8d5;
+    border: 1px solid #00d8d5;

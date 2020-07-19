@@ -65,9 +65,8 @@ class App {
     console.log(id);
     const book = Book.findById(id);
     console.log(book);
-    if (book instanceof Book) {
-  $('#update').html(book.renderUpdateForm())
-}
+    $('#update').html(book.renderUpdateForm());
+
   }
 
   handleDeleteClick(e) {
