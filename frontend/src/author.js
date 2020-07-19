@@ -8,23 +8,15 @@ class Author {
 
   renderListItem() {
 
-    if (super.author_id === this.id) {
-    return `<div class="card" data-author-id="${this.id}">
-            <button class="view-events-dog-button" style="background-color:blue">View Record</button>
-            <button class="edit-dog-button" style="background-color:orange">Edit Info</button>
-            <button class="delete-dog-button" style="background-color:red">Delete Dog</button>
-            </br></br>
-            <strong class="author-name">${this.name}</strong> <br/>
-            <strong class="author-name">${super.title}</strong> <br/>
-        </div>`;
-  }
-  return `<div class="card" data-author-id="${this.id}">
-          <button class="view-events-dog-button" style="background-color:blue">View Record</button>
-          <button class="edit-dog-button" style="background-color:orange">Edit Info</button>
-          <button class="delete-dog-button" style="background-color:red">Delete Dog</button>
-          </br></br>
-          <strong class="author-name">${this.name}</strong> <br/>
-      </div>`;
+    return `
+    <li>
+      <h3>${this.name}
+
+      <button data-id=${this.id} id="myBtn">Update Name</button>
+
+        <button data-id=${this.id} id="myBtn2">delete</button>
+      </h3>
+    </li>`;
   }
 
 

@@ -2,7 +2,8 @@ class Book {
   constructor(data) {
     this.id = data.id;
     this.title = data.title;
-    const author = Author.findById(data.author_id);
+    this.author_id = data.author_id;
+    const author = Author.findById(this.author_id);
     this.author = author.name;
     Book.all.push(this);
   }
@@ -15,7 +16,7 @@ class Book {
   renderListItem() {
     return `
     <li>
-      <h3>${this.title} - ${this.author}
+      <h3>${this.title} -
       <button data-id=${this.id} class="book-btn">Update Title</button>
         <button data-id=${this.id} class="book-btn">delete</button>
       </h3>
@@ -36,6 +37,10 @@ class Book {
 
   static findById(id) {
     return this.all.find(book => book.id === +id);
+  }
+
+  static findByAuthorId(id) {
+    return this.all.find(book => book.author_id === +id);
   }
 }
 
