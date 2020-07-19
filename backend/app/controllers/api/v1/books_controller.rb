@@ -11,7 +11,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
+    @book = Book.find_by_id(params[:id])
 
     @book.update(book_params)
     if @book.save

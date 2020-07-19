@@ -6,11 +6,16 @@ class Api::V1::AuthorsController < ApplicationController
    render json: @authors
  end
 
+ def create
+   @author = Author.create(author_params)
+   render json: @author
+ end
+
 
  private
 
  def author_params
-   params.require(:book).permit(:name)
+   params.permit(:name)
  end
 
 
