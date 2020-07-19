@@ -10,6 +10,13 @@ class Api::V1::BooksController < ApplicationController
     render json: @book
   end
 
+  def destroy
+    @book = Book.find_by_id(params[:id])
+    if book.destroy
+      render json: @book
+    end
+  end
+
   def update
     @book = Book.find_by_id(params[:id])
 
