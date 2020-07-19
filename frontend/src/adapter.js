@@ -19,8 +19,8 @@ class Adapter {
     return this.patch(`${this.baseUrl}/books/${id}`, body);
   }
 
-  deleteBook(id, body) {
-    return this.delete(`${this.baseUrl}/books/${id}`, body);
+  deleteBook(id) {
+    return this.delete(`${this.baseUrl}/books/${id}`);
   }
 
   get(url) {
@@ -38,8 +38,6 @@ class Adapter {
   delete(url, body) {
     return fetch(url, {
       method: 'DELETE',
-      headers: this.headers,
-      body: JSON.stringify(body)
     }).then(res => res.json());
   }
 }

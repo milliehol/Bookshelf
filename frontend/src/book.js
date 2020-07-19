@@ -12,13 +12,17 @@ class Book {
     this.title = title;
   }
 
+  delete({ title }) {
+    this.title = title;
+  }
+
 
   renderListItem() {
     return `
     <li>
       <h3>${this.title} -
-      <button data-id=${this.id} class="book-btn">Update Title</button>
-        <button data-id=${this.id} class="book-btn">delete</button>
+      <button data-id=${this.id} id="myBtn">Update Title</button>
+        <form data-id=${this.id}><button class="book-btn">delete</button></form>
       </h3>
     </li>`;
   }
