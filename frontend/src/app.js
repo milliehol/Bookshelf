@@ -3,7 +3,7 @@ class App {
     this.adapter = new Adapter();
 
     this.handleEditClick = this.handleEditClick.bind(this);
-      this.handleEditClick = this.handleDeleteClick.bind(this);
+    //this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.createBooks = this.createBooks.bind(this);
     this.createAuthors = this.createAuthors.bind(this);
@@ -13,7 +13,7 @@ class App {
 
   attachEventListeners() {
     $('#books-list').on('click', 'button', this.handleEditClick);
-    $('#books-list').on('click', 'button', this.handleDeleteClick);
+    //$('#books-list').on('click', 'button', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
   }
 
@@ -65,13 +65,15 @@ class App {
     console.log(id);
     const book = Book.findById(id);
     console.log(book);
-    $('#update').html(book.renderUpdateForm());
+    if (book instanceof Book) {
+  $('#update').html(book.renderUpdateForm())
+}
   }
 
   handleDeleteClick(e) {
     const id = e.target.dataset.id;
     console.log(id);
-    const book = Book.findById(id);
+    const book = JSON.stringify(Book.findById(id));
     console.log(book);
     const title = $(e.target)
       .find('input')
