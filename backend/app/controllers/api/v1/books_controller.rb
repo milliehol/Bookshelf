@@ -14,6 +14,8 @@ class Api::V1::BooksController < ApplicationController
     @book = Book.find_by_id(params[:id])
     if book.destroy
       render json: @book
+    else
+      render json: {errors: @book.errors.full_messages}, status: 422
     end
   end
 

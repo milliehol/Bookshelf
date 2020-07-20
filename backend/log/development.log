@@ -3496,3 +3496,138 @@ Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.0ms | Allocations: 1362)
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 1218)
 
 
+Started GET "/api/v1/books" for ::1 at 2020-07-20 18:37:06 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-20 18:37:06 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (3.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 6.0ms | ActiveRecord: 8.1ms | Allocations: 5859)
+
+
+Completed 200 OK in 24ms (Views: 5.1ms | ActiveRecord: 15.5ms | Allocations: 9187)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-20 18:37:09 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-20 18:37:09 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (2.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1480)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 2.0ms | Allocations: 2288)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-20 18:37:11 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-20 18:37:11 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.5ms | Allocations: 1140)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 2.4ms | Allocations: 2161)
+
+
+Started DELETE "/api/v1/books/undefined" for ::1 at 2020-07-20 18:37:14 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.5ms | Allocations: 60735)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8522f4e440>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/undefined" for ::1 at 2020-07-20 18:37:21 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.3ms | Allocations: 60246)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8526023f98>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-20 18:37:51 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.6ms | Allocations: 60333)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8522e7a050>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-20 18:38:00 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.5ms | Allocations: 60326)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8522fdf0f8>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-20 18:46:55 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.0ms | Allocations: 60425)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8520323910>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/undefined" for ::1 at 2020-07-20 18:46:59 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.4ms | Allocations: 60244)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8521058888>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-20 18:47:04 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.3ms | Allocations: 60324)
+
+
+  
+NameError (undefined local variable or method `book' for #<Api::V1::BooksController:0x00007f8522d08730>
+Did you mean?  @book):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
