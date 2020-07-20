@@ -35,9 +35,10 @@ class Adapter {
     }).then(res => res.json());
   }
 
-  delete(url, body) {
+  delete(url) {
     return fetch(url, {
       method: 'DELETE',
     }).then(res => res.json());
-  }
+   }
+
 }

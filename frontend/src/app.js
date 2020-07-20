@@ -2,7 +2,7 @@ class App {
   constructor() {
     this.adapter = new Adapter();
 
-    this.handleEditClick = this.handleEditClickB.bind(this);
+    //this.handleEditClick = this.handleEditClickB.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.createBooks = this.createBooks.bind(this);
