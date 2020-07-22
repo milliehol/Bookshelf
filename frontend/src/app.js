@@ -38,8 +38,7 @@ class App {
     $('#books-list').empty();
     Book.all.forEach(book => $('#books-list').append(book.renderListItem()));
 
-
-  }
+ }
 
   addAuthors() {
     $('#authors-list').empty();
@@ -86,6 +85,7 @@ class App {
     const id = e.target.dataset.id;
     console.log(id);
     this.adapter.deleteBook(id);
+    this.addBooks();
 
   }
 
