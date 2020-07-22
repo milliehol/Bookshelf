@@ -10,11 +10,10 @@ class Author {
 
     return `
     <li>
-      <h3>${this.name}
+      <h3>${this.name} ---
 
-      <button data-id=${this.id} id="myBtn">Update Name</button>
+      <button data-id=${this.id} id="myBtn">Update</button>
 
-        <button data-id=${this.id} id="myBtn2">delete</button>
       </h3>
     </li>`;
   }

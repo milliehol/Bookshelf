@@ -20,9 +20,12 @@ class Book {
   renderListItem() {
     return `
     <li>
-      <h3>${this.title} -
-      <button data-id=${this.id} id="myBtn">Update Title</button>
-        <form data-id=${this.id}><button class="book-btn">delete</button></form>
+      <h3>${this.title}
+      <table><tr><td>
+      <div><button data-id=${this.id} id="myBtn">Update Title</button></div></td>
+      <td>
+      <p><button data-id=${this.id}>delete</button></p></td>
+      </tr></table>
       </h3>
     </li>`;
   }

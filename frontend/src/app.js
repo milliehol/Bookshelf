@@ -2,7 +2,7 @@ class App {
   constructor() {
     this.adapter = new Adapter();
 
-    //this.handleEditClick = this.handleEditClickB.bind(this);
+    this.handleEditClick = this.handleEditClickB.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.createBooks = this.createBooks.bind(this);
@@ -13,8 +13,9 @@ class App {
   }
 
   attachEventListeners() {
-    //$('#books-list').on('click', 'button', this.handleEditClickB);
-    $('#books-list').on('click', 'button', this.handleDeleteClick);
+    //document.getElementById("myBtn").addEventL("click", this.handleEditClickB, true);
+    $('#books-list').on('click', 'div', this.handleEditClickB);
+    $('#books-list').on('click', 'p', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
   }
 
@@ -86,6 +87,7 @@ class App {
     console.log(id);
     this.adapter.deleteBook(id);
     this.addBooks();
+    location.reload();
 
   }
 
