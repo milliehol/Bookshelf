@@ -3673,3 +3673,1022 @@ NameError (undefined local variable or method `book' for #<Api::V1::BooksControl
 Did you mean?  @book):
   
 app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:35:27 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:35:27 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (2.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 8.4ms | ActiveRecord: 11.4ms | Allocations: 7149)
+
+
+Completed 200 OK in 23ms (Views: 7.3ms | ActiveRecord: 13.5ms | Allocations: 7929)
+
+
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-21 22:35:54 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (2.6ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 4139)
+
+
+Started DELETE "/api/v1/books/1" for ::1 at 2020-07-21 22:36:05 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms | Allocations: 1149)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:37:06 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:37:06 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.3ms | Allocations: 1413)
+
+
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1856)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:39:05 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:39:05 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 1.0ms | Allocations: 1855)
+
+
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1125)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:39:12 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:39:12 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1125)
+
+
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1852)
+
+
+Started DELETE "/api/v1/books/2" for ::1 at 2020-07-21 22:39:17 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2565)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:39:21 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:39:21 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1107)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.4ms | Allocations: 1952)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:39:23 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:39:23 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1123)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 1952)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (1.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (8.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Villete"], ["author_id", 1], ["created_at", "2020-07-22 02:45:07.800183"], ["updated_at", "2020-07-22 02:45:07.800183"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jane Eyre"], ["author_id", 1], ["created_at", "2020-07-22 02:45:25.175088"], ["updated_at", "2020-07-22 02:45:25.175088"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:46:22 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:46:22 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (2.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 5.3ms | ActiveRecord: 8.0ms | Allocations: 6562)
+
+
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 10.0ms | Allocations: 7960)
+
+
+Started DELETE "/api/v1/books/3" for ::1 at 2020-07-21 22:46:30 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 3063)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:46:35 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:46:35 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.6ms | Allocations: 2077)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:48:20 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:48:20 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1038)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 2053)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:48:22 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:48:22 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 1023)
+
+
+  [1m[36mAuthor Load (1.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.6ms | Allocations: 2053)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:48:23 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:48:23 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1397)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.1ms | Allocations: 2053)
+
+
+Started DELETE "/api/v1/books/4" for ::1 at 2020-07-21 22:48:27 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 2564)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:51:25 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:51:25 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 942)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1906)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Villete"], ["author_id", 1], ["created_at", "2020-07-22 02:51:46.554776"], ["updated_at", "2020-07-22 02:51:46.554776"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jane Eyre"], ["author_id", 1], ["created_at", "2020-07-22 02:52:07.482463"], ["updated_at", "2020-07-22 02:52:07.482463"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:52:17 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:52:17 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (2.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 8.1ms | Allocations: 6566)
+
+
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 10.4ms | Allocations: 7962)
+
+
+Started DELETE "/api/v1/books/5" for ::1 at 2020-07-21 22:52:23 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 3063)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:52:23 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:52:23 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1039)
+
+
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 1.3ms | Allocations: 1856)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:52:28 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:52:28 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (2.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 2.4ms | Allocations: 1474)
+
+
+  [1m[36mBook Load (2.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 2.9ms | Allocations: 2060)
+
+
+Started DELETE "/api/v1/books/6" for ::1 at 2020-07-21 22:52:32 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 2565)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:52:32 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:52:32 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.9ms | Allocations: 1736)
+
+
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 1473)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Villete"], ["author_id", 1], ["created_at", "2020-07-22 02:58:36.367550"], ["updated_at", "2020-07-22 02:58:36.367550"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jane Eyre"], ["author_id", 1], ["created_at", "2020-07-22 02:58:53.841034"], ["updated_at", "2020-07-22 02:58:53.841034"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:59:12 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:59:12 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (3.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 8.9ms | Allocations: 7094)
+
+
+Completed 200 OK in 19ms (Views: 4.9ms | ActiveRecord: 11.1ms | Allocations: 8112)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:59:15 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:59:15 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.3ms | Allocations: 1491)
+
+
+  [1m[36mBook Load (2.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 2.9ms | Allocations: 2178)
+
+
+Started DELETE "/api/v1/books/7" for ::1 at 2020-07-21 22:59:18 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.6ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 3063)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 22:59:19 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 22:59:19 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.3ms | Allocations: 1128)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.2ms | Allocations: 2053)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:20:08 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:20:08 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 1099)
+
+
+  [1m[36mAuthor Load (1.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.8ms | Allocations: 2198)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:20:11 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:20:11 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 1037)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.5ms | Allocations: 1998)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:20:14 -0400
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:20:14 -0400
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1317)
+
+
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 916)
+
+
+Started DELETE "/api/v1/books/8" for ::1 at 2020-07-21 23:20:42 -0400
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:14:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:15:in `destroy'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 2565)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:20:42 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:20:42 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1382)
+
+
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.3ms | Allocations: 1953)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (1.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Villete"], ["author_id", 1], ["created_at", "2020-07-22 03:22:24.544530"], ["updated_at", "2020-07-22 03:22:24.544530"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jane Eyre"], ["author_id", 1], ["created_at", "2020-07-22 03:22:40.212163"], ["updated_at", "2020-07-22 03:22:40.212163"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Tom Sawyer"], ["author_id", 1], ["created_at", "2020-07-22 03:23:03.929577"], ["updated_at", "2020-07-22 03:23:03.929577"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:23:15 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:23:15 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 8.0ms | Allocations: 7197)
+
+
+Completed 200 OK in 17ms (Views: 4.7ms | ActiveRecord: 11.0ms | Allocations: 8213)
+
+
+Started PATCH "/api/v1/books/11" for ::1 at 2020-07-21 23:23:41 -0400
+Processing by Api::V1::BooksController#update as JSON
+  Parameters: {"title"=>"Tom Sawy", "id"=>"11", "book"=>{"title"=>"Tom Sawy"}}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:23:in `update'
+[31mUnpermitted parameters: :id, :book[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/books_controller.rb:25:in `update'
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:25:in `update'
+  [1m[36mBook Update (2.9ms)[0m  [1m[33mUPDATE "books" SET "title" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["title", "Tom Sawy"], ["updated_at", "2020-07-22 03:23:41.455387"], ["id", 11]]
+  ↳ app/controllers/api/v1/books_controller.rb:25:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/books_controller.rb:25:in `update'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 4.3ms | Allocations: 7611)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:31:10 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:31:10 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 1534)
+
+
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.7ms | Allocations: 2411)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:32:05 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:32:05 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 1596)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 2257)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-21 23:32:12 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-21 23:32:12 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1122)
+
+
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 2054)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:27:13 -0400
+Processing by Api::V1::BooksController#index as HTML
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 2.7ms | Allocations: 1191)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 11:57:49 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:57:49 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1301)
+
+
+  [1m[36mAuthor Load (2.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 2.2ms | Allocations: 2400)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 11:57:52 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:57:52 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.9ms | Allocations: 1123)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 1.0ms | Allocations: 2201)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 11:58:58 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:58:58 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.1ms | Allocations: 1446)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 2240)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:59:00 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 11:59:00 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1239)
+
+
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.3ms | Allocations: 2255)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 11:59:03 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 11:59:03 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1122)
+
+
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.3ms | Allocations: 2200)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:04:18 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:04:18 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1239)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.1ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:04:22 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:04:22 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.3ms | Allocations: 1461)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.2ms | Allocations: 2240)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:06:04 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:06:04 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1766)
+
+
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 2160)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:06:06 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:06:06 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1107)
+
+
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.6ms | Allocations: 2255)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:07:19 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:07:19 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1227)
+
+
+  [1m[36mAuthor Load (2.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 2.0ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:07:21 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:07:21 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1225)
+
+
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 1.5ms | Allocations: 2055)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:07:23 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:07:23 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1756)
+
+
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2055)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:10:29 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:10:29 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1111)
+
+
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.6ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:10:30 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:10:30 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 1122)
+
+
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.0ms | Allocations: 2054)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:16:21 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:16:21 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 1203)
+
+
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.4ms | Allocations: 2200)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 12:16:22 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 12:16:22 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 1122)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.7ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:36:23 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:36:23 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 1.2ms | Allocations: 1949)
+
+
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.9ms | Allocations: 2199)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:36:25 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:36:25 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 1107)
+
+
+  [1m[36mBook Load (2.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 2.8ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:38:54 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:38:54 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1224)
+
+
+  [1m[36mAuthor Load (2.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 2.2ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:38:56 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:38:56 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.9ms | Allocations: 1872)
+
+
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 2054)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:39:31 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:39:31 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1125)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 1.4ms | Allocations: 2256)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:39:32 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:39:32 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 1.2ms | Allocations: 1462)
+
+
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.4ms | Allocations: 2040)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:42:37 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:42:37 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.7ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 1243)
+
+
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.7ms | Allocations: 2256)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:44:19 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:44:19 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1111)
+
+
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.7ms | Allocations: 2255)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:45:28 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:45:28 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1251)
+
+
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.4ms | Allocations: 2039)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:58:55 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:58:55 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.2ms | Allocations: 1950)
+
+
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 2200)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:58:57 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:58:57 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1239)
+
+
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 2054)
+
+
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:58:58 -0400
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:58:58 -0400
+Processing by Api::V1::BooksController#index as */*
+Processing by Api::V1::AuthorsController#index as */*
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+  [1m[36mAuthor Load (1.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 1240)
+
+
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 1.4ms | Allocations: 2054)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 13:59:00 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 13:59:00 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 1.0ms | Allocations: 1446)
+
+
+  [1m[36mBook Load (3.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 3.0ms | Allocations: 2240)
+
+
+Started GET "/api/v1/authors" for ::1 at 2020-07-22 14:06:28 -0400
+Started GET "/api/v1/books" for ::1 at 2020-07-22 14:06:28 -0400
+Processing by Api::V1::AuthorsController#index as */*
+Processing by Api::V1::BooksController#index as */*
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/controllers/api/v1/authors_controller.rb:6:in `index'
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/v1/books_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1184)
+
+
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.9ms | Allocations: 2199)
+
+
+Started POST "/api/v1/authors" for ::1 at 2020-07-22 14:06:38 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/authors"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
