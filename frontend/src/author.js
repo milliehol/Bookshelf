@@ -18,9 +18,37 @@ class Author {
     </li>`;
   }
 
+  renderAdd() {
+
+    return `
+    <li>
+      <h3>Add New Author
+
+      <button data-id=${this.id} id="myBtn">Add Author</button>
+
+      </h3>
+    </li>`;
+  }
+
+  renderAddForm() {
+    return `
+    <form>
+      <p>
+        <input type="text" value="${name}" />
+      </p>
+
+      <button type='submit'>Save Author</button>
+    </form>
+  `;
+  }
+
 
 
   update({ name }) {
+    this.name = name;
+  }
+
+  add({ name }) {
     this.name = name;
   }
 

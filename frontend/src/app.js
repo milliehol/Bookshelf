@@ -3,6 +3,8 @@ class App {
     this.adapter = new Adapter();
 
     this.handleEditClick = this.handleEditClickB.bind(this);
+    this.handleAddClick = this.handleAddClick.bind(this);
+    this.handleAddSubmit = this.handleAddSubmit.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.createBooks = this.createBooks.bind(this);
@@ -14,9 +16,11 @@ class App {
 
   attachEventListeners() {
     //document.getElementById("myBtn").addEventL("click", this.handleEditClickB, true);
+    //$('#authors-list').on('click', 'form', this.handleAddSubmit);
     $('#books-list').on('click', 'div', this.handleEditClickB);
     $('#books-list').on('click', 'p', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
+    $('#add').on('submit', 'form', this.handleAddSubmit);
   }
 
   createBooks(books) {
@@ -56,6 +60,20 @@ class App {
   //  });
 }
 
+handleAddSubmit(e) {
+  e.preventDefault();
+  const name = $(e.target)
+    .find('input')
+    .val();
+
+  const bodyJSON = { name };
+  this.adapter.addAuthor(bodyJSON).then(newAuthor => {
+    const author = new Author(bodyJSON);
+    author.add(newAuthor);
+    this.addAuthors();
+  });
+}
+
 
   handleFormSubmit(e) {
     e.preventDefault();
@@ -71,6 +89,11 @@ class App {
       book.update(updatedBook);
       this.addBooks();
     });
+  }
+
+  handleAddClick(e) {
+    $('#addForm').html(renderAddForm());
+
   }
 
   handleEditClickB(e) {
@@ -91,5 +114,17 @@ class App {
 
   }
 
+
+  renderAddForm() {
+    return `
+    <form>
+      <p>
+        <input type="text" value="${name}" />
+      </p>
+
+      <button type='submit'>Save Author</button>
+    </form>
+  `;
+  }
 
 }
