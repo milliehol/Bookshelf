@@ -1,7 +1,7 @@
 class Api::V1::AuthorsController < ApplicationController
 
 
-  def index
+def index
    @authors = Author.all
    render json: @authors
  end
