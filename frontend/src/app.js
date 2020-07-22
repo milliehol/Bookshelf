@@ -88,6 +88,7 @@ handleAddSubmit(e) {
       const book = Book.findById(updatedBook.id);
       book.update(updatedBook);
       this.addBooks();
+      location.reload();
     });
   }
 

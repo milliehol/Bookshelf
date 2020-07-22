@@ -20,7 +20,7 @@ class Book {
   renderListItem() {
     return `
     <li>
-      <h3>${this.title}
+      <h3>${this.title} by ${this.author}
       <table><tr><td>
       <div><button data-id=${this.id} id="myBtn">Update Title</button></div></td>
       <td>
