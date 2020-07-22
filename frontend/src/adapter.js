@@ -38,7 +38,7 @@ class Adapter {
   delete(url) {
     return fetch(url, {
       method: 'DELETE',
-    }).then(res => res.json());
+    }).then(res => res.json()).then;
    }
 
 }
