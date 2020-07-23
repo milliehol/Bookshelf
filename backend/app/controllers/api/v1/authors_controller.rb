@@ -14,7 +14,7 @@ class Api::V1::AuthorsController < ApplicationController
  def update
    @author = Author.find_by_id(params[:id])
 
-   if @author.save
+   if @author.update(author_params)
      render json: @author
    else
      render json: {errors: @author.errors.full_messages}, status: 422
