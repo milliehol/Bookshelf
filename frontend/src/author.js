@@ -42,7 +42,7 @@ class Author {
 
 
   static findById(id) {
-    return this.all.find(author => author.id === id);
+    return this.all.find(author => author.id === +id);
   }
 
 }

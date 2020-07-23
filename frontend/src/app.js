@@ -131,7 +131,7 @@ handleAddSubmit(e) {
     const id = e.target.dataset.id;
     console.log(id);
     const author = Author.findById(id);
-    console.log(book);
+    console.log(author);
     $('#update2').html(author.renderUpdateForm());
 
   }

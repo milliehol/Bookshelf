@@ -19,6 +19,10 @@ class Adapter {
     return this.patch(`${this.baseUrl}/books/${id}`, body);
   }
 
+  updateAuthor(id, body) {
+    return this.patch(`${this.baseUrl}/authors/${id}`, body);
+  }
+
   deleteBook(id) {
     return this.delete(`${this.baseUrl}/books/${id}`);
   }
