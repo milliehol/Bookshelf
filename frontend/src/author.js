@@ -18,23 +18,11 @@ class Author {
     </li>`;
   }
 
-  renderAdd() {
-
+  renderUpdateForm() {
     return `
-    <li>
-      <h3>Add New Author
-
-      <button data-id=${this.id} id="myBtn">Add Author</button>
-
-      </h3>
-    </li>`;
-  }
-
-  renderAddForm() {
-    return `
-    <form>
+    <form data-id='${this.id}'>
       <p>
-        <input type="text" value="${name}" />
+        <input type="text" value="${this.name}" />
       </p>
 
       <button type='submit'>Save Author</button>

@@ -3,10 +3,12 @@ class App {
     this.adapter = new Adapter();
 
     this.handleEditClick = this.handleEditClickB.bind(this);
+    this.handleEditClick = this.handleEditClickA.bind(this);
     this.handleAddClick = this.handleAddClick.bind(this);
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmitA.bind(this);
     this.createBooks = this.createBooks.bind(this);
     this.createAuthors = this.createAuthors.bind(this);
     this.addAuthors = this.addAuthors.bind(this);
@@ -17,9 +19,11 @@ class App {
   attachEventListeners() {
     //document.getElementById("myBtn").addEventL("click", this.handleEditClickB, true);
     //$('#authors-list').on('click', 'form', this.handleAddSubmit);
+    $('#authors-list').on('click', 'button', this.handleEditClickA);
     $('#books-list').on('click', 'div', this.handleEditClickB);
     $('#books-list').on('click', 'p', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
+    $('#update2').on('submit', 'form', this.handleFormSubmitA);
     $('#add').on('submit', 'form', this.handleAddSubmit);
   }
 
@@ -92,6 +96,23 @@ handleAddSubmit(e) {
     });
   }
 
+  handleFormSubmitA(e) {
+    e.preventDefault();
+    const id = e.target.dataset.id;
+    const author = Author.findById(id);
+    const name = $(e.target)
+      .find('input')
+      .val();
+
+    const bodyJSON = { name };
+    this.adapter.updateAuthor(author.id, bodyJSON).then(updatedAuthor => {
+      const author = Author.findById(updatedAuthor.id);
+      author.update(updatedAuthor);
+      this.addAuthors();
+      location.reload();
+    });
+  }
+
   handleAddClick(e) {
     $('#addForm').html(renderAddForm());
 
@@ -106,6 +127,15 @@ handleAddSubmit(e) {
 
   }
 
+  handleEditClickA(e) {
+    const id = e.target.dataset.id;
+    console.log(id);
+    const author = Author.findById(id);
+    console.log(book);
+    $('#update2').html(author.renderUpdateForm());
+
+  }
+
   handleDeleteClick(e) {
     const id = e.target.dataset.id;
     console.log(id);
@@ -116,16 +146,5 @@ handleAddSubmit(e) {
   }
 
 
-  renderAddForm() {
-    return `
-    <form>
-      <p>
-        <input type="text" value="${name}" />
-      </p>
-
-      <button type='submit'>Save Author</button>
-    </form>
-  `;
-  }
 
 }
