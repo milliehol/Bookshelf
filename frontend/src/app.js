@@ -2,13 +2,13 @@ class App {
   constructor() {
     this.adapter = new Adapter();
 
-    this.handleEditClick = this.handleEditClickB.bind(this);
-    this.handleEditClick = this.handleEditClickA.bind(this);
+    this.handleEditClickB = this.handleEditClickB.bind(this);
+    this.handleEditClickA = this.handleEditClickA.bind(this);
     this.handleAddClick = this.handleAddClick.bind(this);
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleFormSubmit = this.handleFormSubmitA.bind(this);
+    this.handleFormSubmitA = this.handleFormSubmitA.bind(this);
     this.createBooks = this.createBooks.bind(this);
     this.createAuthors = this.createAuthors.bind(this);
     this.addAuthors = this.addAuthors.bind(this);
@@ -100,16 +100,20 @@ handleAddSubmit(e) {
     e.preventDefault();
     const id = e.target.dataset.id;
     const author = Author.findById(id);
+    console.log(author);
     const name = $(e.target)
       .find('input')
       .val();
 
     const bodyJSON = { name };
+    console.log(bodyJSON);
     this.adapter.updateAuthor(author.id, bodyJSON).then(updatedAuthor => {
+      console.log(updatedAuthor);
       const author = Author.findById(updatedAuthor.id);
+      console.log(author);
       author.update(updatedAuthor);
       this.addAuthors();
-      location.reload();
+      //location.reload();
     });
   }
 
