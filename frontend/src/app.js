@@ -113,7 +113,7 @@ handleAddSubmit(e) {
       console.log(author);
       author.update(updatedAuthor);
       this.addAuthors();
-      //location.reload();
+      location.reload();
     });
   }
 
