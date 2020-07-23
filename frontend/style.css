@@ -10,6 +10,23 @@ a {
     color:#97659;
    }
 
+table {
+  width: 1000px;
+  text-align: center;
+  table-layout: fixed;
+}
+
+tr {
+  vertical-align: top;
+
+}
+
+td {
+  width: 500px;
+  padding: 30px;
+  text-align: center;
+}
+
 input {
   font-size: 1.5em;
 }
@@ -36,9 +53,6 @@ ul {
   padding-left: 20px;
 }
 
-.delete-book-link {
-  color:red;
-}
 
 
 h1,h2,h3,h4,h5,h6 {

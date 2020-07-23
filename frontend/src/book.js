@@ -3,8 +3,6 @@ class Book {
     this.id = data.id;
     this.title = data.title;
     this.author_id = data.author_id;
-    const author = Author.findById(this.author_id);
-    this.author = author.name;
     Book.all.push(this);
   }
 
@@ -20,12 +18,12 @@ class Book {
   renderListItem() {
     return `
     <li>
-      <h3>${this.title} by ${this.author}
-      <table><tr><td>
-      <div><button data-id=${this.id} id="myBtn">Update Title</button></div></td>
-      <td>
-      <p><button data-id=${this.id}>delete</button></p></td>
-      </tr></table>
+      <h3>${this.title} by ${Author.findByIdName(this.author_id)}
+      <p>
+      <div><button data-id=${this.id} id="myBtn">Update Title</button></div>
+
+      <span><button data-id=${this.id}>delete</button></span>
+      </p>
       </h3>
     </li>`;
   }

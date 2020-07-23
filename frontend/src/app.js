@@ -21,7 +21,7 @@ class App {
     //$('#authors-list').on('click', 'form', this.handleAddSubmit);
     $('#authors-list').on('click', 'button', this.handleEditClickA);
     $('#books-list').on('click', 'div', this.handleEditClickB);
-    $('#books-list').on('click', 'p', this.handleDeleteClick);
+    $('#books-list').on('click', 'span', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
     $('#update2').on('submit', 'form', this.handleFormSubmitA);
     $('#add').on('submit', 'form', this.handleAddSubmit);
