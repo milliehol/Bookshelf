@@ -1,7 +1,7 @@
 class App {
   constructor() {
     this.adapter = new Adapter();
-
+    this.handleSortClickA = this.handleSortClickA.bind(this);
     this.handleEditClickB = this.handleEditClickB.bind(this);
     this.handleEditClickA = this.handleEditClickA.bind(this);
     this.handleAddClick = this.handleAddClick.bind(this);
@@ -20,6 +20,7 @@ class App {
     //document.getElementById("myBtn").addEventL("click", this.handleEditClickB, true);
     //$('#authors-list').on('click', 'form', this.handleAddSubmit);
     $('#authors-list').on('click', 'button', this.handleEditClickA);
+    $('#sort').on('click', 'h1', this.handleSortClickA);
     $('#books-list').on('click', 'div', this.handleEditClickB);
     $('#books-list').on('click', 'span', this.handleDeleteClick);
     $('#update').on('submit', 'form', this.handleFormSubmit);
@@ -73,7 +74,7 @@ handleAddSubmit(e) {
   const bodyJSON = { name };
   this.adapter.addAuthor(bodyJSON).then(newAuthor => {
     const author = new Author(bodyJSON);
-    author.add(newAuthor);
+    //author.add(newAuthor);
     this.addAuthors();
   });
 }
@@ -119,6 +120,13 @@ handleAddSubmit(e) {
 
   handleAddClick(e) {
     $('#addForm').html(renderAddForm());
+
+  }
+
+  handleSortClickA(e) {
+    $('#authors-list').empty();
+      $('#sort').html(Author.all.sort((a, b) => (a.name.localeCompare(b.name))));
+    Author.all.forEach(author => $('#authors-list').append(author.renderListItem()));
 
   }
 

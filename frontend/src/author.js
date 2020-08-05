@@ -18,6 +18,18 @@ class Author {
     </li>`;
   }
 
+  renderSort() {
+
+    return `
+    <li>
+      <h3>${this.name} ---
+
+      <button data-id=${this.id} id="myBtn">Update</button>
+
+      </h3>
+    </li>`;
+  }
+
   renderUpdateForm() {
     return `
     <form data-id='${this.id}'>
